@@ -566,10 +566,7 @@ section.active{
   background: var(--cor-de-fundo);
 }
 
-.contato .heading {
-  font-size: 4.5rem;
-  margin-bottom: 5rem;
-}
+
 
 .contato-container {
   display: flex;
@@ -619,22 +616,13 @@ section.active{
   font-size: 1.6rem;
   font-weight: 500;
   transition: .3s;
+  cursor: pointer;
 }
 
 .btn-contato:hover {
   background: transparent;
   color: var(--cor-principal);
   border: .2rem solid var(--cor-principal);
-}
-
-.contato-img {
-  margin-top: 6rem;
-}
-
-.contato-img img {
-  width: 300px;
-  border-radius: 1rem;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
 }
 
 #email-text {
@@ -654,22 +642,93 @@ section.active{
   overflow: hidden;
 }
 
-/* Degradê circular centralizado no meio */
+/* Degradê circular centralizado no meio*/
 .contato::before {
   content: "";
   position: absolute;
-  top: 50%;        /* centraliza verticalmente */
+  top: 50%;        /*centraliza verticalmente */
   left: 50%;       /* centraliza horizontalmente */
   transform: translate(-50%, -50%); /* garante que o centro do círculo fique bem no meio */
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(0, 102, 255, 0.3), transparent 70%);
-  filter: blur(100px);
+  filter: blur(80px);
   z-index: 0;
 }
 
-/* Garante que o conteúdo fique por cima do degradê */
+/* Garante que o conteúdo fique por cima do degradê*/
 .contato * {
   position: relative;
   z-index: 1;
+}
+
+/* media/ responsividade*/
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 45%;
+    }
+    
+}
+@media screen and (max-width: 992px) {
+    header {
+        padding: 2rem 4%;
+    }
+    section{
+        padding: 10rem 4% 2rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    #menu-icon{
+        display: block;
+    }
+
+    nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        background: var(--cor-de-fundo);
+        border-top: .1rem solid rgb(0, 0, 0, .2);
+        box-shadow: 0.5rem 1rem rgb(0, 0, 0, .2);
+        text-align: center;
+        display: none;
+    }
+    nav.active{
+        display: block;
+    }
+    nav a {
+        display: block;
+        margin: 4rem 0;
+    }
+
+    .home{
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .home-img .img-box{
+        width: 35rem;
+        height: 35rem;
+    }
+    
+    .resume-container,
+    .projeto-container,
+    .contato-container{
+        grid-template-columns: 1fr;
+    }
+
+    .resume-container{
+        gap: 3rem;
+    }
+
+    .projeto-container .projeto-box:first-child{
+        order: 1;
+    }
+
+    .contato::before{
+        width: 40%;
+        height: 40%;
+    }
 }

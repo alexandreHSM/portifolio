@@ -2,6 +2,13 @@
 
 const navLinks = document.querySelectorAll('header nav a')
 const sections = document.querySelectorAll('section')
+const menu = document.querySelector('#menu-icon')
+const navBar = document.querySelector('header nav')
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('bx-x');
+    navBar.classList.toggle('active');
+})
 
 const activePage = () =>{
     const header = document.querySelector('header')
@@ -24,6 +31,9 @@ const activePage = () =>{
      sections.forEach(section => {
         section.classList.remove('active')
     });
+
+    menu.classList.toggle('bx-x');
+    navBar.classList.toggle('active');
 }
 navLinks.forEach((link, idx) => {
     link.addEventListener('click', () => {
