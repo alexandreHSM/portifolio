@@ -334,7 +334,7 @@ section.active{
     border: .2rem solid var(--cor-de-fundo-secundaria);
     font-size: 1.6rem;
     color: var(--cor-secundaria);
-    font-weight: 500;
+    font-weight: 300;
     margin-bottom: 2rem;
     border-radius: .8rem;
     cursor: pointer;
@@ -731,4 +731,5 @@ section.active{
         width: 40%;
         height: 40%;
     }
+
 }
